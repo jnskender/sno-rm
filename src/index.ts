@@ -1,8 +1,11 @@
 import { GlideFetch } from "./GlideFetch";
 
 try {
-  const response = new GlideFetch("incident").select(["number, assigned_to"]);
-  console.log(response);
+  new GlideFetch("incident")
+    .select(["number, assigned_to"])
+    .then((response) => {
+      console.log(response);
+    });
 } catch (error) {
   console.log(error);
 }
